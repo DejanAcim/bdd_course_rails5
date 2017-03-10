@@ -8,4 +8,5 @@ Gems:
 http://stackoverflow.com/questions/35893584/nomethoderror-undefined-method-last-comment-after-upgrading-to-rake-11)
 * Capybara
 * Bootstrap
-* Autoprefixer
+* Autoprefixer(???)
+* Guard (autotester)
