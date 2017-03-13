@@ -10,6 +10,10 @@
 			</div>
 			<div class="artcle-body">
 				<%= truncate(article.body, length: 500) %>
+			</div>
+
+			<div class="author">
+				<small>Created by: <%= article.user %></small>
 			</div>		
 		</div>
 	<% end %>
