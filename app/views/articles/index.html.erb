@@ -9,12 +9,12 @@
 				<%= link_to article.title, article_path(article) %>
 			</div>
 			<div class="artcle-body">
-				<%= truncate(article.body, length: 500) %>
+				<%= truncate(sanitize(article.body), length: 500) %>
 			</div>
 
 			<div class="author">
-				<small>Created by: <%= article.user %></small>
-			</div>		
+				<small>Created by: <%= article.user.email %></small>
+			</div>
 		</div>
 	<% end %>
 <% end %>
