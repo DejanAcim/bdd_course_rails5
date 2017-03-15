@@ -15,10 +15,10 @@ class ArticlesController < ApplicationController
     @article.user = current_user
     
   	if @article.save
-    	flash[:success] = "Article has been created"
+    	flash[:notice] = "Article has been created"
     	redirect_to articles_path
     else
-      flash.now[:danger] = "Article has not been created"
+      flash.now[:alert] = "Article has not been created"
       render :new
     end
   end
@@ -37,14 +37,14 @@ class ArticlesController < ApplicationController
 
   def update
     unless @article.user == current_user
-      flash[:danger] = "You can only edit your own article."
+      flash[:alert] = "You can only edit your own article."
       redirect_to root_path
     else
       if @article.update(article_params)
         flash[:success] = "Article has been updated"
         redirect_to @article
       else
-        flash.now[:danger] = "Article has not been updated"
+        flash.now[:alert] = "Article has not been updated"
         render :edit
       end
     end
@@ -59,7 +59,7 @@ class ArticlesController < ApplicationController
         flash[:success] = "Article has been deleted"
         redirect_to articles_path
       else
-        flash.now[:danger] = "You need to sign in or sign up before continuing."
+        flash.now[:alert] = "You need to sign in or sign up before continuing."
         render :show
       end
     end
